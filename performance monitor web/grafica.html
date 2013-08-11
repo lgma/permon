@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>EVDO::Active Conections</title>
+	<link href="styles/graphs.css" rel="stylesheet" type="text/css">
+	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+	<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="js/jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="js/jquery.flot.time.js"></script>
+	<script type="text/javascript">
+	
+	
+	$(function() {
+		var day = [[1375660800000,10],[1375664400000,3],[1375668000000,4],[1375671600000,5],[1375675200000,6],[1375678800000,1],[1375682400000,2],[1375686000000,3],[1375689600000,4],[1375693200000,5],[1375696800000,6],[1375700400000,1],[1375704000000,2],[1375707600000,3],[1375711200000,4],[1375714800000,5],[1375718400000,6],[1375722000000,1],[1375725600000,2],[1375729200000,3],[1375732800000,4],[1375736400000,5],[1375740000000,6],[1375743600000,1],[1375747200000,2]];
+		var week = [[1375142400000,89], [1375228800000,98], [1375315200000,96], [1375401600000,100], [1375488000000,40], [1375574400000,50], [1375660800000,94]];
+		var month = [[1373068800000,99], [1373155200000,89], [1373241600000,98], [1373328000000,96], [1373414400000,100], [1373500800000,40], [1373587200000,50], [1373673600000,94], [1373760000000,99], [1373846400000,89], [1373932800000,98], [1374019200000,96], [1374105600000,100], [1374192000000,40], [1374278400000,50], [1374364800000,94], [1374451200000,99], [1374537600000,89], [1374624000000,98], [1374710400000,96], [1374796800000,100], [1374883200000,40], [1374969600000,50], [1375056000000,99], [1375142400000,89], [1375228800000,98], [1375315200000,96], [1375401600000,100], [1375488000000,40], [1375574400000,50], [1375660800000,94]];
+		var year = [[1345852800000,2570], [1348531200000,3000], [1351209600000,2800], [1353888000000,5900], [1356566400000,3000], [1359244800000,2500], [1361923200000,6000], [1364601600000,4600], [1367280000000,3500], [1369958400000,5000], [1372636800000,4000], [1375315200000,150]];
+		
+		$.plot("#placeholder", [day],{  
+						xaxis: { 	mode: "time", 
+									minTickSize: [1, "hour"],
+									//timezone: "browser",
+									//min: (new Date(2013, 07, 04)).getTime(), 
+									//max: (new Date(2013, 07, 06)).getTime(),
+									timeformat:"%H",
+									twelveHourClock: true},
+						lines: { show: true, steps: true },
+						points: { show: true }
+					});
+				
+		$("#day").click(function () {
+			$.plot("#placeholder", [day],{  
+						xaxis: { 	mode: "time", 
+									minTickSize: [1, "hour"],
+									//timezone: "browser",
+									//min: (new Date(2013, 07, 04)).getTime(), 
+									//max: (new Date(2013, 07, 06)).getTime(),
+									timeformat:"%H",
+									twelveHourClock: true},
+						lines: { show: true, steps: true }
+					});		
+		});
+		$("#week").click(function () {
+			$.plot("#placeholder", [week], {
+				xaxis: {
+					mode: "time",
+					minTickSize: [1, "day"],
+					//min: (new Date(1999, 11, 25)).getTime(),
+					//max: (new Date(2000, 0, 1)).getTime(),
+					timeformat: "%a"
+					},
+				lines: { show: true, steps: true }
+			});
+		});	
+
+		$("#month").click(function () {
+			$.plot("#placeholder", [month], {
+				xaxis: {
+					mode: "time",
+					minTickSize: [1, "day"],
+					//min: (new Date(1999, 0, 1)).getTime(),
+					//max: (new Date(2000, 0, 1)).getTime()
+					timeformat: "%a"
+					},
+				lines: { show: true, steps: true }
+			});
+		});			
+		
+		$("#year").click(function () {
+			$.plot("#placeholder", [year], {
+				xaxis: {
+					mode: "time",
+					minTickSize: [1, "month"],
+					//min: (new Date(1999, 0, 1)).getTime(),
+					//max: (new Date(2000, 0, 1)).getTime()
+					timeformat: "%b"
+					},
+				lines: { show: true, steps: true }
+			});
+		});	
+		
+				
+	});
+
+	</script>
+</head>
+<body>
+
+	<div id="header">
+		<h2>Day </h2>
+	</div>
+
+	<div id="graph_content">
+		<button id="day">Day</button>
+		<button id="week">Last week</button>
+		<button id="month">Last month</button>
+		<button id="year">Last year</button>
+		<div class="graph_container">
+			<div id="placeholder" class="graph_placeholder"></div>
+		</div>
+
+		
+
+	</div>
+
+	<div id="footer">
+		SNP Performance Monitor Copyright &copy; 2013
+	</div>
+
+</body>
+</html>

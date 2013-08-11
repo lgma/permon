@@ -1,0 +1,66 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	font: .8em "Verdana", "Geneva", sans-serif;
+	
+}
+
+h2{ 
+	margin-bottom:10px;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+#content{
+	width:820px;
+	margin:40px auto 0;
+	
+}
+
+#content2{
+	width:1020px;
+	margin:40px auto 0;
+	
+}
+
+#content3{
+	width:1220px;
+	margin:40px auto 0;
+	
+}
+
+#headtable table 
+{
+	border-collapse:collapse; 
+	width =100%; 
+}
+
+#headtable td
+{
+
+
+
+}
+
+#headtable th
+{
+    text-align: center;
+	font-weight:bold;
+	background-color:#cccccc;
+
+}
+
+#footer {
+	margin-top: 25px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 12px;
+	color: #999;
+}
